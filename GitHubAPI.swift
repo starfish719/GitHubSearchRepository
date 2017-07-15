@@ -8,7 +8,7 @@
 
 final class GitHubAPI {
     struct SearchRepositories: GitHubRequest {
-        let ketword: String
+        let keyword: String
         
         typealias Response = SearchResponse<Repository>
         
@@ -21,7 +21,7 @@ final class GitHubAPI {
         }
         
         var parameters: Any? {
-            return ["q": ketword]
+            return ["q": keyword]
         }
     }
     

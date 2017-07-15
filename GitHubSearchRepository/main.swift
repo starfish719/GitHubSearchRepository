@@ -19,7 +19,7 @@ guard let keyword = readLine(strippingNewline: true) else {
 let client = GitHubClient()
 
 // リクエストの発行
-let request = GitHubAPI.SearchRepositories(ketword: keyword)
+let request = GitHubAPI.SearchRepositories(keyword: keyword)
 
 client.send(request: request) { result in
     switch result {
