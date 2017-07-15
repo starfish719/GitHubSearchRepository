@@ -9,7 +9,7 @@
 import Foundation
 
 enum GitHubClientError: Error {
-    case connectionrror(Error)
+    case connectionError(Error)
     
     case responseParseError(Error)
     

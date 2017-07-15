@@ -11,7 +11,6 @@ import Foundation
 struct Repository: JSONDecodable {
     let id: Int
     let name: String
-    let fullname: String
     let owner: User
     
     init(json: Any) throws {
@@ -27,17 +26,12 @@ struct Repository: JSONDecodable {
             throw JSONDecodeError.missingValue(key: "name", actualValue: dictionary["name"])
         }
         
-        guard let fullname = dictionary["fullname"] as? String else {
-            throw JSONDecodeError.missingValue(key: "fullname", actualValue: dictionary["fullname"])
-        }
-        
         guard let owner = dictionary["owner"] else {
             throw JSONDecodeError.missingValue(key: "owner", actualValue: dictionary["owner"])
         }
         
         self.id = id
         self.name = name
-        self.fullname = fullname
         self.owner = try User(json: owner)
     }
 }
